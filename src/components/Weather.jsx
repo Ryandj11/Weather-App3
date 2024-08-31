@@ -6,8 +6,6 @@ import cloud_icon from '../assets/cloud.png'
 import drizzle_icon from '../assets/drizzle.png'
 import rain_icon from '../assets/rain.png'
 import snow_icon from '../assets/snow.png'
-import wind_icon from '../assets/wind.png'
-import humidity_icon from '../assets/humidity.png'
 import moon_icon from '../assets/moon.png'
 
 const Weather = () => {
@@ -44,7 +42,10 @@ const Weather = () => {
                 windSpeed: data.wind.speed,
                 temperature: Math.floor(data.main.temp),
                 location: data.name,
-                icon: icons
+                icon: icons,
+                high: data.main.temp_max,
+                low: data.main.temp_min
+                
             })
 
         } catch (error) {
@@ -64,17 +65,15 @@ const Weather = () => {
         <p className = 'location'>{weatherData.location}</p>
         <div className='weather-data'>
             <div className="col">
-                <img src ={humidity_icon}></img>
                 <div>
-                    <p>{weatherData.humidity} %</p>
-                    <span>Humidity</span>
+                    <span>High</span>
+                    <p>{weatherData.high}°F</p>
                 </div>
             </div>
             <div className="col">
-                <img src ={wind_icon}></img>
                 <div>
-                    <p>{weatherData.windSpeed} M/Hr %</p>
-                    <span>Wind Speed</span>
+                    <span>Low</span>
+                    <p>{weatherData.low}°F</p>
                 </div>
             </div>
         </div>
