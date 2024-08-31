@@ -8,6 +8,7 @@ import rain_icon from '../assets/rain.png'
 import snow_icon from '../assets/snow.png'
 import wind_icon from '../assets/wind.png'
 import humidity_icon from '../assets/humidity.png'
+import moon_icon from '../assets/moon.png'
 
 const Weather = () => {
 
@@ -16,7 +17,7 @@ const Weather = () => {
 
     const allIcons ={
         "01d": clear_icon,
-        "01n": clear_icon,
+        "01n": moon_icon,
         "02d": cloud_icon,
         "02n": cloud_icon,
         "03d": cloud_icon,
